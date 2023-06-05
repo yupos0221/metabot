@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>A-FRAME samples</title>
+    </head>
+    <body>
+       <h1>A-FRAME Samples</h1>
+
+        GitHub ... <a target="_blank" href="https://github.com/mganeko/aframe">https://github.com/mganeko/aframe</a>
+        
+        <h3>サンプルURL</h3> 
+        
+        <a target="_blank" href="https://yupos0221.github.io/aframe/">GitHub pages (https://yupos0221.github.io/aframe/)</a> で試すことができます。<br/>
+        RICOH THETA Vと Oculus Go（または他のWebVR対応のブラウザ)が必要です。
+        
+        <h4>配信側</h4>
+        <ul>
+          <li>PC ブラウザ
+            <ul><li><a target="_blank" href="https://yupos0221.github.io/aframe/pc.html">https://yupos0221.github.io/aframe/pc.html</a></li></ul>
+            <ul>ローカルにサーバーを建てる場合：<a target="_blank" href="http:///localhost:8080/pc.html">http://localhost:8080/pc.html</a></ul>
+            <ul><li>Roomがランダムに割り振られます。変更することも可能です</li></ul>
+          </li>
+          <li>[Get Devices]ボタンをクリックすると、利用可能な Videoデバイス(カメラ)、Audioデバイス(マイク)のリストを取得します
+            <ul>
+              <li>カメラ、マイクへのアクセスを聞かれるので、許可してください</li>
+            </ul>
+          </li>
+          <li>[Start Video] ボタンをクリックしてください
+            <ul><li>映像と音声が取得され、ブラウザ内に表示されます</li></ul>
+          </li>
+          <li>[Connect] ボタンをクリックしてください
+            <ul>
+              <li>SkyWay に接続され、指定されたRoomに参加します</li>
+              <li>自分の映像の下に接続するためのURLが表示されます</li>
+              <li>このURLを、WebVR 対応のブラウザで開くと映像を見ることができます</li>
+            </ul>
+          </li>
+          <br />
+          <li>配信を停止する場合には [Disconnect] → [Stop Video] の順にボタンをクリックしてください</li>
+        </ul>
+
+        <h4>視聴側 (WebVR 対応のブラウザ)</h4>
+        <ul>
+          <li>WebVR 対応のブラウザを起動してください</li>
+          <li>配信側で表示されたURLを、ブラウザでアクセスします
+            <ul>
+              <li>
+                あらかじめ <a target="_blank" href="https://yupos0221.github.io/aframe/vr.html?room=">https://yupos0221.github.io/aframe/vr.html?room=</a> までをブックマークに入れておき、最後にroom名だけ追加すると手間が少なくなるのでお勧めです
+              </li>
+              <li>ローカルにサーバーを建てる場合：<a target="_blank" href="http:///localhost:8080/vr.html?room=">http://localhost:8080/vr.html?room=</a></li>
+              
+              <li>
+                または <a target="_blank" href="https://yupos0221.github.io/aframe/g.html">https://yupos0221.github.io/aframe/g.html</a> を経由してroom名を入力後、[送信]ボタンをクリックすることも可能です
+              </li>
+            </ul>
+          </li>
+          <li>しばらくロードの時間がかかります
+              <ul><li>A-FRAMEの準備ができたら 中央にメッセージが表示されます</li></ul>
+          </li>
+          <li>画面をクリックしてください（Oculus Goのコントローラーでトリガーを引く）
+            <ul>
+              <li>SkyWay に接続され、指定されたRoomに参加します</li>
+              <li>PCに接続されている THETA V の360ど映像が表示されます</li>
+            </ul>
+          </li>
+          <li>右下の VRモードボタンをクリックすると、360度モードになります（カーソルを合わせてOculus Goのコントローラーでトリガーを引く）
+            <ul><li>自分の頭の向いている方向に応じて、映像の見える方向が変わります</li></ul>
+          </li>
+          <br />
+          <li>360度モードを抜けるには コントローラの[戻る]ボタンを押します</li>
+          <li>Skywayの接続を切る処理は未実装です。リロードするか、他のページに移動してください</li>
+        </ul>
+
+        <h3>License / ライセンス</h3>
+        <ul>
+          <li>This sample is under the MIT license</li>
+          <li>このサンプルはMITランセンスで提供されます</li>
+        </ul>
+        
+        
+    </body>
+</html>
