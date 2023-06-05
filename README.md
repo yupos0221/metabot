@@ -2,8 +2,8 @@
 * https://github.com/mganeko/aframe
 
 ## 配信側
-* PCのChromeブラウザで、 [https://yupos0221.github.io/metabo-webRTC/pc.html](https://yupos0221.github.io/metabo-webRTC/pc.html) を開く
-  * [https://yupos0221.github.io/metabo-webRTC/raspberry.html](https://yupos0221.github.io/metabo-webRTC/raspberry.html)
+* PCのChromeブラウザで、 [https://yupos0221.github.io/metabot-webRTC/pc.html](https://yupos0221.github.io/metabot-webRTC/pc.html) を開く
+  * [https://yupos0221.github.io/metabot-webRTC/raspberry.html](https://yupos0221.github.io/metabot-webRTC/raspberry.html)
   * Roomがランダムに割り振られます。変更することも可能です
 * [Get Devices]ボタンをクリックすると、利用可能な Videoデバイス(カメラ)、Audioデバイス(マイク)のリストを取得します
   * カメラ、マイクへのアクセスを聞かれるので、許可してください
@@ -19,8 +19,8 @@
 ## 視聴側 
 * WebVR 対応のブラウザを起動してください
 * 配信側で表示されたURLを、ブラウザでアクセスします
-  * あらかじめ [https://yupos0221.github.io/metabo-webRTC/vr.html?room=](https://yupos0221.github.io/metabo-webRTC/vr.html?room=) までをブックマークに入れておき、最後にroom名だけ追加すると手間が少なくなるのでお勧めです
-  * PCのブラウザで見る場合は[https://yupos0221.github.io/metabo-webRTC/go.html?room=](https://yupos0221.github.io/metabo-webRTC/go.html?room=)
+  * あらかじめ [https://yupos0221.github.io/metabot-webRTC/vr.html?room=](https://yupos0221.github.io/metabot-webRTC/vr.html?room=) までをブックマークに入れておき、最後にroom名だけ追加すると手間が少なくなるのでお勧めです
+  * PCのブラウザで見る場合は[https://yupos0221.github.io/metabot-webRTC/go.html?room=](https://yupos0221.github.io/metabot-webRTC/go.html?room=)
 * しばらくロードの時間がかかります
   * A-FRAMEの準備ができたら 中央にメッセージが表示されます
 * 画面をクリックしてください（Oculus Goのコントローラーでトリガーを引く）
