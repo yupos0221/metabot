@@ -8,6 +8,9 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.chrome import service as fs
 import time
+from beep import beep
+beep(0.05,220)
+beep(0.05,440)
 
 # Chromeのオプション
 options = ChromeOptions()
@@ -58,17 +61,24 @@ try:
   join_room_button.click()
   print("click join room button")
   driver.implicitly_wait(5)
-
-  # 検索結果のタイトルを取得して出力
   
+  # 検索結果のタイトルを取得して出力
+  beep(0.03,440)
+  beep(0.03,440)
 
 except:
   import traceback
   traceback.print_exc()
+  beep(0.03,880)
+  beep(0.03,880)
+
 
 finally:
+
   # Chromeを終了
   input("何かキーを押すと終了します...")
   # スクリーンショットを保存
   driver.save_screenshot('chromium_search.png')
   driver.quit()
+  beep(0.05, 440)
+  beep(0.05, 220)

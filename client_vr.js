@@ -38,16 +38,21 @@ let displayStream = null;
 // let newStream = null;
 function startMediaAndJoinRoom() {
   // displayStream = await navigator.mediaDevices.getDisplayMedia({video:true});
-  const mediaConstraints = {video: false, audio: true};
+  const mediaConstraints = {video: true, audio: true};
   navigator.mediaDevices.getUserMedia(mediaConstraints)
   .then( stream => {
     // _logStream(stream);
     localStream = stream;
-    // let canvas = document.querySelector('canvas');
-    // let dummyStream = canvas.captureStream(0.1);
+    
+    // console.log("get video track", localStream.getVideoTracks()[0]);
+    // const $audio = document.createElement('audio');
+    // const dummyStream = $audio.captureStream();
+    // // let canvas = document.querySelector('canvas');
+    // // let dummyStream = canvas.captureStream(0.1);
     // const track = dummyStream.getVideoTracks()[0];
-    // stream.addTrack(track);
-    console.log("get media stream");
+    // localStream.addTrack(track);
+    // console.log("get video track", localStream.getVideoTracks()[0], track.muted);
+    // console.log("get media stream");
     joinRoom();
     
     // const [displayVideoTrack] = displayStream.getVideoTracks();
@@ -88,9 +93,7 @@ function joinRoom() {
     }
     meshRoom.on('open', function() {
       console.log('joined the room:' + roomName);
-      var startMsec = new Date();   
-      // 指定ミリ秒間だけループさせる（CPUは常にビジー状態）
-      while (new Date() - startMsec < 100);
+      
     });
     meshRoom.on('stream', function(remoteStream) {
       // let remoteId = remoteStream.peerId;
