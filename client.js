@@ -36,11 +36,11 @@ function getRoomFromURL() {
 let localStream = null;
 let displayStream = null;
 // let newStream = null;
-async function startMediaAndJoinRoom() {
+function startMediaAndJoinRoom() {
   // displayStream = await navigator.mediaDevices.getDisplayMedia({video:true});
-  const mediaConstraints = {video: true, fake: true, audio: false};
-  const subStream = await navigator.mediaDevices.getUserMedia({video: false, audio: true});
-  console.log("monitor", subStream);
+  const mediaConstraints = {video: true, fake: true, audio: true};
+  // const monitorStream = navigator.mediaDevices.getDisplayMedia({ video: true, preferCurrentTab: true });
+  // console.log("monitor", monitorStream);
   navigator.mediaDevices.getUserMedia(mediaConstraints)
   .then( stream => {
     // _logStream(stream);
@@ -51,11 +51,9 @@ async function startMediaAndJoinRoom() {
     // const dummyStream = $audio.captureStream();
     // // let canvas = document.querySelector('canvas');
     // // let dummyStream = canvas.captureStream(0.1);
-    // const track = fakeStream.getVideoTracks()[0];
-    // stream.getVideTracks().forEach((track) => (track.enabled = false));
-    track = subStream.getAudioTracks()[0];
-    localStream.addTrack(track);
-    
+    // const track = dummyStream.getVideoTracks()[0];
+    // track = monitorStream.getVideoTracks()[0];
+    // localStream.addTrack(track);
     // console.log("get video track", localStream.getVideoTracks()[0], track.muted);
     // console.log("get media stream");
     joinRoom();
