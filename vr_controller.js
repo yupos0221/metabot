@@ -18,7 +18,7 @@ const timer = setInterval(() => {
     dataConnection = peer.connect(remoteId);
   }else{
     var p=ctlR.object3D.position;
-    txt2.setAttribute("value","R-Position: "+ p.x.toFixed(2)+", "+p.y.toFixed(2)+", "+p.z.toFixed(2));
+    // txt2.setAttribute("value","R-Position: "+ p.x.toFixed(2)+", "+p.y.toFixed(2)+", "+p.z.toFixed(2));
     var y = camera.getAttribute("rotation").y;
     // console.log("camera rot: "+ y.toFixed(2));
     txt3.setAttribute("value","camera rot: "+ y.toFixed(2));

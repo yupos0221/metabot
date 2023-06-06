@@ -36,7 +36,7 @@ function getRoomFromURL() {
 let localStream = null;
 let displayStream = null;
 // let newStream = null;
-async function startMediaAndJoinRoom() {
+function startMediaAndJoinRoom() {
   // displayStream = await navigator.mediaDevices.getDisplayMedia({video:true});
   const mediaConstraints = {video: false, audio: true};
   navigator.mediaDevices.getUserMedia(mediaConstraints)
@@ -47,8 +47,8 @@ async function startMediaAndJoinRoom() {
     // let dummyStream = canvas.captureStream(0.1);
     // const track = dummyStream.getVideoTracks()[0];
     // stream.addTrack(track);
-    // console.log("get media stream");
-    joinRoom(stream);
+    console.log("get media stream");
+    joinRoom();
     
     // const [displayVideoTrack] = displayStream.getVideoTracks();
     // const [userAudioTrack] = stream.getAudioTracks();
@@ -63,7 +63,7 @@ async function startMediaAndJoinRoom() {
 }
 
 let remoteStreams = [];
-function joinRoom(stream) {
+function joinRoom() {
   let apiKey = getApiKeyFromURL() || myApiKey;
   if ((! apiKey) || (apiKey === '')) {
     alert('Please set your API Key');
@@ -76,10 +76,10 @@ function joinRoom(stream) {
   peer = new Peer({key: apiKey, debug: 1});
   console.log("peer ID:"+ peer.id);
   peer.on('open',function() {
-    console.log('--open--');
+    console.log('--open--', localStream);
     //meshRoom = peer.joinRoom(roomName, {mode: 'mesh', stream: localStream});
-    if (stream) {
-      meshRoom = peer.joinRoom(roomName, {mode: 'mesh', stream: stream});
+    if (localStream) {
+      meshRoom = peer.joinRoom(roomName, {mode: 'mesh', stream: localStream});
       console.log('get media');
     }
     else {
@@ -88,13 +88,22 @@ function joinRoom(stream) {
     }
     meshRoom.on('open', function() {
       console.log('joined the room:' + roomName);
+      var startMsec = new Date();   
+      // 指定ミリ秒間だけループさせる（CPUは常にビジー状態）
+      while (new Date() - startMsec < 100);
     });
     meshRoom.on('stream', function(remoteStream) {
       // let remoteId = remoteStream.peerId;
       remoteId = remoteStream.peerId;
       console.log('remote ID: ' + remoteId);
-      // videoState = remoteStream.getVideoTracks()[0].readyState;
-      // console.log('state: ' + videoState);
+      if(remoteStream.getVideoTracks()[0]){
+        videoState = remoteStream.getVideoTracks()[0].readyState;
+        console.log('state: ' + videoState);
+      }else{
+        console.log('no video');
+
+      }
+      
       attachVideo(remoteId, remoteStream);
       // remoteStreams.push(remoteStream);
       // console.log("remoteStreams length: " + remoteStreams.length)
