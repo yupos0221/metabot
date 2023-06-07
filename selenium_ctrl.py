@@ -34,7 +34,7 @@ driver = webdriver.Chrome(service=chrome_service, options=options)
 # driver = Chrome(executable_path='/usr/bin/chromedriver', options=options)
 # driver = Chrome(executable_path='/usr/bin/chromedriver', options=options, desired_capabilities=capabilities)
 # url = 'https://raspberrypi4/base_server.html'
-url = 'https://metabotpc.local/metabot-webRTC/raspberry.html'
+url = 'https://metabotpc.local/metabot/raspberry.html'
  
 try:
   driver.get(url)
